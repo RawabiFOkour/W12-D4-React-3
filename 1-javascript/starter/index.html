@@ -12,10 +12,33 @@
 
     // Practice 1 - const, let, freeze
     // Create a variable named "username" that should not be reassigned
+
+    //const username ;
+
+
     // Create a variable named "loggedIn" that can be reassigned
+    let loggedIn;
     // Create a post object with an id and title that is frozen
     // Test whether you can reassign each of the variables
     // Log out each of the variables to the page
+    const post = {
+    id: 1,
+    title:"Rawabi"
+    };
+
+    Object.freeze(post);
+    post.id = 3;
+    post.title="Okour"
+
+
+    console.log(post.id); //display in console
+    document.writeln(post.id) //display in html page
+
+
+    console.log(post.title); //display in console
+    document.writeln(post.title)  //display in html page
+ 
+
 
 
 
@@ -24,10 +47,10 @@
     // Create a variable called message that can be reassigned
     // Use a template literal to create message like "Hi firstName lastName!"
     // Log out the message to the console
-    const firstName = "";
-    const lastName = ""
+    const firstName = "Rawabi";
+    const lastName = "Okour"
 
-    let message = ``;
+    let message = `Hi ${firstName} ${lastName}!`;
 
     console.log(message);
 
@@ -42,6 +65,18 @@
         `<p>${name}<p>`
       )
     }
+
+   // arrow function ArrowName
+    let ArrowName = (name)=> {
+      return (
+        `<p>${name}<p>`
+      )
+    }
+
+   
+    console.log(ArrowName('ArrowName'))
+    document.writeln(ArrowName('ArrowName'))
+  
 
 
 
@@ -64,6 +99,17 @@
         title: "Last one"
       }
     ];
+
+
+   let result1= posts.filter((elem)=>
+       elem.title.includes('post')
+    ).map((elem)=>
+       elem.title
+    )
+
+   console.log(result1)
+
+
 
 
 
@@ -92,6 +138,24 @@
     ];
 
 
+
+
+  postsArray.map((elem)=>{
+    const h2 = document.createElement('h2');
+    let text = document.createTextNode(elem.title)
+
+    console.log(postsContainer.appendChild(h2))
+    
+    h2.appendChild(text);
+    postsContainer.appendChild(h2)
+  })
+
+
+  
+  
+
+
+  
   </script>
 </body>
 

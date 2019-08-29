@@ -15,19 +15,21 @@ const Practice4 = () => {
       {/*         
         1. Spread the "user" object into User so each "user" property becomes it's own prop
       */}
-      <User />
+      <User user={user}/>
     </div>
   );
 };
+
 
 /*
   2. Destructure username and firstName from props
 */
 const User = props => {
+  const {firstName,username}=props.user;
   return (
     <div className="user">
-      <h1>Hi FIRSTNAME_HERE!</h1>
-      <p>Username: USERNAME_HERE</p>
+      <h1>{`Hi ${firstName}!`}</h1>
+      <p>{`Username: ${username}`}</p>
     </div>
   );
 };
